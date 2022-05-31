@@ -5,11 +5,8 @@ from datetime import date
 
 def send_email(receiver_email = None, links = None):
     '''
-    sends one email to each tracker with underpriced flats
 
     receiver_email = who to send email to (info from tracker)
-    tracker_id = unique id of tracker
-    district = submitted district by customer
     links = links to underpriced appartments
 
     '''
@@ -35,16 +32,14 @@ def send_email(receiver_email = None, links = None):
         link = '<li>' + f'{link}' + '</li>'
         links_joined.append(link)
 
-    #links = '\n'.join(links)
-
     links_joined = ''.join(links_joined)
     # write body
     html = f"""
-<ol>
-{links_joined}
-</ol>
-<p><br></p>
-    """
+            <ol>
+            {links_joined}
+            </ol>
+            <p><br></p>
+                """
 
     # Turn these into plain/html MIMEText objects
     main_text = MIMEText(html, "html")
