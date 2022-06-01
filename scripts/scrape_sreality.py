@@ -8,8 +8,8 @@ class SrealityScraper():
 
   def __init__(self, reality_aggregator=None):
 
-    self.main_url = "https://www.sreality.cz/hledani/pronajem/byty/praha-2,praha-3,praha-6,praha-7,praha-8,praha-10?velikost=3%2B1,3%2Bkk,2%2B1&plocha-od=60&plocha-do=100&cena-od=18000&cena-do=25000"
     self.reality_aggregator = reality_aggregator
+    self.main_url = self.reality_aggregator.config.sreality
 
   def scrape(self):
 
@@ -35,8 +35,8 @@ class SrealityScraper():
       else:
         self.reality_aggregator.reality_links.append(link_url)
         self.reality_aggregator.append_to_txt(link_url)
+        self.reality_aggregator.existing_links.append(link_url)
 
-    self.reality_aggregator.reality_links = list(dict.fromkeys(self.reality_aggregator.reality_links))  # odstan duplicity
     print(f'Found {len(self.reality_aggregator.reality_links)} apartments')
 
 

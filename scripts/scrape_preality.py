@@ -6,8 +6,8 @@ class PrealityScraper():
     def __init__(self, reality_aggregator=None):
 
         self.url_base = 'https://www.prazskereality.cz'
-        self.main_url = f'{self.url_base}/pronajem-bytu?ruian=MP27,MP35,MP86,MP108&advert_subtype=_2_1,_3_1,_3_KT&advert_price=17000,25000'
         self.reality_aggregator = reality_aggregator
+        self.main_url = self.reality_aggregator.config.preality
 
     def scrape(self):
 
@@ -22,6 +22,7 @@ class PrealityScraper():
                 else:
                     self.reality_aggregator.reality_links.append(link_url)
                     self.reality_aggregator.append_to_txt(link_url)
+                    self.reality_aggregator.existing_links.append(link_url)
 
             next_btn = soup.select_one('a.btn-next')
             if not next_btn:
@@ -29,5 +30,4 @@ class PrealityScraper():
             next_page_lnk = URL_BASE + next_btn.attrs.get('href')
             soup = BeautifulSoup(requests.get(next_page_lnk).content, 'html.parser')
 
-        self.reality_aggregator.reality_links = list(dict.fromkeys(self.reality_aggregator.reality_links))
         print(f'Found {len(self.reality_aggregator.reality_links)} apartments')

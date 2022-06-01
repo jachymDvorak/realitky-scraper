@@ -6,8 +6,9 @@ import os
 
 class RealityAggregator():
 
-    def __init__(self, reality_links = []):
+    def __init__(self, config = None, reality_links = []):
 
+        self.config = config
         self.reality_links = reality_links
         self.filename = self.create_file()
         self.existing_links = self.get_existing_links()
