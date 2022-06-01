@@ -57,7 +57,7 @@ This results in scraping everything once into a .txt file. The file then serves 
 8. Install all requirements
 
 ```bash
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 9. Edit config file - add URLs with pre-selected categories (simply go to the main page and use filters and then copy URL) + add your email(s)
