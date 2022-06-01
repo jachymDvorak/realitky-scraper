@@ -9,9 +9,8 @@ cryptography==37.0.2
 h11==0.13.0
 idna==3.3
 lxml==4.8.0
-numpy==1.22.4
-outcome==1.1.0
-pandas==1.4.2
+numpy
+pandas
 pycparser==2.21
 pyOpenSSL==22.0.0
 PySocks==1.7.1
