@@ -31,7 +31,7 @@
 
 This results in scraping everything once into a .txt file. The file then serves as a "database" so it is updated every time the scraper runs. Proprietary solution.
 
-## Run in the cloud (AWS)
+## Run in the cloud (AWS) every X minutes as a cron job
 
 1. Create free [AWS](https://aws.amazon.com/) account 
 2. Create Amazon Linux t2.micro EC2 (free for ~1 year) and create a private key
