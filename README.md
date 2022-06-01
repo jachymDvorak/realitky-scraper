@@ -64,7 +64,7 @@ crontab run.cron
 ```
 
 10. Verify crontab is running - the cronjob should be visible after the following command
-11. 
+
 ```bash
 crontab -l
 ```
