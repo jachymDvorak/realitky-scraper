@@ -18,9 +18,12 @@
 
 ```
   pip install -r requirements.txt
+  
 ```
 
-4. Run the app
+4. Edit config file - add URLs with pre-selected categories (simply go to the main page and use filters and then copy URL) + add your email(s)
+
+5. Run the app
 
 ```
   python run.py
@@ -57,13 +60,15 @@ This results in scraping everything once into a .txt file. The file then serves 
 pip install -r requirements.txt
 ```
 
-9. Run cron job (every 15 minutes default, edit the file in notepad for different settings)
+9. Edit config file - add URLs with pre-selected categories (simply go to the main page and use filters and then copy URL) + add your email(s)
+
+10. Run cron job (every 15 minutes default, edit the file in notepad for different settings)
 
 ```bash
 crontab run.cron
 ```
 
-10. Verify crontab is running - the cronjob should be visible after the following command
+11. Verify crontab is running - the cronjob should be visible after the following command
 
 ```bash
 crontab -l
