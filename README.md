@@ -4,25 +4,25 @@
 
 1. Clone the project
 
-```bash
+```
   git clone <repo>
 ```
 
 2. Go to the project directory
 
-```bash
+```
   cd <repo>
 ```
 
 3. Install dependencies
 
-```bash
+```
   pip install -r requirements.txt
 ```
 
 4. Run the app
 
-```bash
+```
   python run.py
 ```
 
