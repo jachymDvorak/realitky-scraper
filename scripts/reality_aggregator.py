@@ -3,45 +3,61 @@ import smtplib, ssl
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import os
+from typing import List
+from scripts.config import Config
 
 class RealityAggregator():
 
-    def __init__(self, config = None, reality_links = []):
+    def __init__(self,
+                 config: Config,
+                 reality_links: List=[]):
 
         self.config = config
         self.reality_links = reality_links
         self.filename = self.create_file()
         self.existing_links = self.get_existing_links()
 
-    def create_file(self):
+    def create_file(self) -> str:
+        '''creates the path to file where links to apts are saved if it doesn't exist, or outputs the path to existing file'''
 
-        filename = os.path.join(os.path.dirname(__file__), 'links.txt')
+        filename = os.path.join(os.path.dirname(__file__), self.config.database)
 
         if not os.path.exists(filename):
             with open(filename, 'w') as f:
                 pass
 
+        print(filename)
+
         return filename
 
-    def get_existing_links(self):
+    def get_existing_links(self) -> List:
+
+        '''reads the file of existing links with apts and returns a list of existing apts'''
+
 
         with open(self.filename, 'r') as f:
             existing_links = [line.rstrip() for line in f.readlines()]
 
+        print(f'Reading existing links from {self.filename}')
+        print(f'One of the existing links: {existing_links[1]}')
+
         return existing_links
 
-    def append_to_txt(self, link):
+    def append_to_txt(self, link: str = None) -> None:
+
+        '''appends the apartment to the file with all apts'''
 
         print(f'Appending link to {self.filename}')
         with open(self.filename, 'a') as f:
             f.write(link)
             f.write('\n')
 
-    def send_email(self, receiver_email=None):
+    def send_email(self, receiver_email: str = None) -> None:
         '''
 
         receiver_email = who to send email to
-        links = links to found apartments
+
+        sends email to the receiver with all new found apts
 
         '''
 
@@ -85,3 +101,5 @@ class RealityAggregator():
             server.sendmail(
                 sender_email, receiver_email, message.as_string()
             )
+
+        print(f'Sending links to {receiver_email} these links: {self.reality_links}')
