@@ -2,5 +2,6 @@ sreality: 'https://www.sreality.cz/hledani/pronajem/byty/praha?region=m%C4%9Bsts
 breality: 'https://www.bezrealitky.cz/vyhledat?offerType=PRONAJEM&estateType=BYT&disposition=DISP_2_1%2FDISP_3_KK&priceFrom=12000&priceTo=20000&order=TIMEORDER_DESC&regionOsmId=R434063&osm_value=Nusle%2C+Praha%2C+okres+Hlavn%C3%AD+m%C4%9Bsto+Praha%2C+Hlavn%C3%AD+m%C4%9Bsto+Praha%2C+Praha%2C+%C4%8Cesko&roommate=false&page=1'
 preality: 'https://www.prazskereality.cz/pronajem-bytu?ruian=CO490156&advert_subtype=_2_1,_3_KT&advert_price=12000,20000'
 ireality: 'https://reality.idnes.cz/s/pronajem/byty/nad-12000-do-20000-za-mesic/?s-l=CAST_OBCE-490156&s-rd=2&s-qc%5BsubtypeFlat%5D%5B0%5D=21&s-qc%5BsubtypeFlat%5D%5B1%5D=3k'
-emails: ['xkrystof.krupansky@gmail.com', 'xsulcova.gabriela@gmail.com']
+emails: ['krystof.krupansky@gmail.com', 'sulcova.gabriela@gmail.com']
 database: 'links_krystof.txt'
+send_messages: 'email'
