@@ -27,9 +27,7 @@ class SrealityScraper():
       print('Running webdriver...')
 
       # instantiate webdriver; install webdriver according to current chrome version
-      #driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
-      driver = webdriver.Chrome('/home/ec2-user/.wdm/drivers/chromedriver/linux64/102.0.5005.61/chromedriver', options=options)
-
+      driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
       print(f'Scraping sreality from url: {self.main_url}')
 
       # open main url in chrome

@@ -13,10 +13,11 @@ class Config():
         self.preality = self.config['preality']
         self.database = self.config['database']
         self.emails = self.config['emails']
+        self.send_messages = self.config['send_messages']
 
     def read_config(self) -> dict:
 
-        filename = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', self.config_name))
+        filename = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'configs', self.config_name))
 
         print(f'Reading config from: {filename}')
 

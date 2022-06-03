@@ -1,3 +1,0 @@
-*/15 * * * * python3 run.py
-*/20 * * * * python3 run.py -c config_krystof.yaml
-

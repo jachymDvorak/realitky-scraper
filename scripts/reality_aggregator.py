@@ -5,6 +5,8 @@ from email.mime.multipart import MIMEMultipart
 import os
 from typing import List
 from scripts.config import Config
+import json
+import requests
 
 class RealityAggregator():
 
@@ -20,7 +22,7 @@ class RealityAggregator():
     def create_file(self) -> str:
         '''creates the path to file where links to apts are saved if it doesn't exist, or outputs the path to existing file'''
 
-        filename = os.path.join(os.path.dirname(__file__), self.config.database)
+        filename = os.path.join(os.path.dirname(__file__), '..', 'databases', self.config.database)
 
         if not os.path.exists(filename):
             with open(filename, 'w') as f:
@@ -103,3 +105,33 @@ class RealityAggregator():
             )
 
         print(f'Sending links to {receiver_email} these links: {self.reality_links}')
+
+    # def send_links_to_telegram(self):
+    #
+    #     # get API parameters for Telegram
+    #     token = '5539208971:AAEmkkzGmq0WM0GmTTo8hoWLmgynO5Az2IA'
+    #     chat_id = '-750251473'
+    #
+    #     # instantiate bot
+    #     bot = telegram.Bot(token=token)
+    #
+    #     # send links
+    #     for link in self.reality_links:
+    #         bot.sendMessage(chat_id=chat_id, text=link)
+
+    def send_telegram_messages(self):
+
+        for link in self.reality_links:
+
+            headers = {'Content-Type': 'application/json',
+                       'Proxy-Authorization': 'Basic base64'}
+            data_dict = {'chat_id': '-750251473',
+                         'text': link,
+                         'parse_mode': 'HTML'}
+            data = json.dumps(data_dict)
+            url = 'https://api.telegram.org/bot5539208971:AAEmkkzGmq0WM0GmTTo8hoWLmgynO5Az2IA/sendMessage'
+            requests.post(url,
+                        data=data,
+                        headers=headers,
+                        verify=False)
+
