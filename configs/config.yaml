@@ -4,3 +4,4 @@ preality: 'https://www.prazskereality.cz/pronajem-bytu?ruian=MP27,MP35,MP86&adve
 ireality: 'https://reality.idnes.cz/s/pronajem/byty/nad-18000-do-26000-za-mesic/?s-l=VUSC-19%3BMOP-35%3BMOP-27%3BMOP-86&s-qc%5BsubtypeFlat%5D%5B0%5D=21&s-qc%5BsubtypeFlat%5D%5B1%5D=3k&s-qc%5BsubtypeFlat%5D%5B2%5D=31&s-qc%5BusableAreaMin%5D=55&s-qc%5BusableAreaMax%5D=100&s-qc%5Blocality%5D%5B0%5D=VUSC-19&s-qc%5Blocality%5D%5B1%5D=MOP-35&s-qc%5Blocality%5D%5B2%5D=MOP-27&s-qc%5Blocality%5D%5B3%5D=MOP-86'
 emails: ['jachymdv@gmail.com', 'xviktorie.havlickova@gmail.com']
 database: 'links.txt'
+send_messages: 'telegram'
