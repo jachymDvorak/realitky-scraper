@@ -121,6 +121,13 @@ class RealityAggregator():
 
     def send_telegram_messages(self):
 
+        file = os.path.join(os.path.dirname(__file__), '..', 'authentication', 'telegram.json')
+
+        with open(file) as f:
+            auth = json.load(f)
+
+        url = f'https://api.telegram.org/{auth.bot_id}/sendMessage'
+
         for link in self.reality_links:
 
             headers = {'Content-Type': 'application/json',
@@ -129,7 +136,7 @@ class RealityAggregator():
                          'text': link,
                          'parse_mode': 'HTML'}
             data = json.dumps(data_dict)
-            url = 'https://api.telegram.org/bot5539208971:AAEmkkzGmq0WM0GmTTo8hoWLmgynO5Az2IA/sendMessage'
+
             requests.post(url,
                         data=data,
                         headers=headers,

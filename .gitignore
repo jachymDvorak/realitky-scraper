@@ -1,4 +1,8 @@
 /.idea
+/authentication
 /venv
+/databases/links.txt
+/databases/links_krystof.txt
+/configs/config_krystof.yaml
 *.ppk
 *.pem
