@@ -21,9 +21,11 @@
   
 ```
 
-4. Edit config file - add URLs with pre-selected categories (simply go to the main page and use filters and then copy URL) + add your email(s) if you want to send messages via email (telegram needs some manual setup). Also add the name of the file you want to save links to, basic 'links.txt' will do. This is mainly if you're running 2+ instances of the app as a cron job and each needs its own 'DB'.
+4. Edit config file - add URLs with pre-selected categories (simply go to the main page and use filters and then copy URL) + add your email(s) if you want to send messages via email or telegram. Also add the name of the file you want to save links to, basic 'links.txt' will do. This is mainly if you're running 2+ instances of the app as a cron job and each needs its own 'DB'.
 
-5. Run the app
+5. If using telegram to send messages, you need a) to manually set up a telegram bot, and b) edit the ```telegram.json``` file with the newly created bot's info.
+
+6. Run the app
 
 ```
   python run.py
