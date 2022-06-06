@@ -127,12 +127,13 @@ class RealityAggregator():
             auth = json.load(f)
 
         url = f'https://api.telegram.org/{auth.bot_id}/sendMessage'
+        chat_id = auth.chat_id
 
         for link in self.reality_links:
 
             headers = {'Content-Type': 'application/json',
                        'Proxy-Authorization': 'Basic base64'}
-            data_dict = {'chat_id': '-750251473',
+            data_dict = {'chat_id': chat_id,
                          'text': link,
                          'parse_mode': 'HTML'}
             data = json.dumps(data_dict)

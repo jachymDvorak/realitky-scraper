@@ -1,5 +1,5 @@
 /.idea
-/authentication
+/authentication/telegram.json
 /venv
 /databases/links.txt
 /databases/links_krystof.txt

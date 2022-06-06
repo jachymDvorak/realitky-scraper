@@ -2,6 +2,6 @@ sreality: 'https://www.sreality.cz/hledani/pronajem/byty/praha-8,praha-3,praha-2
 breality: 'https://www.bezrealitky.cz/vyhledat?offerType=PRONAJEM&estateType=BYT&disposition=DISP_2_1%2FDISP_3_KK%2FDISP_3_1&priceFrom=18000&priceTo=27000&surfaceFrom=55&surfaceTo=110&order=TIMEORDER_DESC&regionOsmId=R435541&osm_value=Praha%2C+%C4%8Cesko&roommate=false&page=1'
 preality: 'https://www.prazskereality.cz/pronajem-bytu?ruian=MP27,MP35,MP86&advert_subtype=_2_1,_3_1,_3_KT&advert_price=17000,26000&usable_area=55,110'
 ireality: 'https://reality.idnes.cz/s/pronajem/byty/nad-18000-do-26000-za-mesic/?s-l=VUSC-19%3BMOP-35%3BMOP-27%3BMOP-86&s-qc%5BsubtypeFlat%5D%5B0%5D=21&s-qc%5BsubtypeFlat%5D%5B1%5D=3k&s-qc%5BsubtypeFlat%5D%5B2%5D=31&s-qc%5BusableAreaMin%5D=55&s-qc%5BusableAreaMax%5D=100&s-qc%5Blocality%5D%5B0%5D=VUSC-19&s-qc%5Blocality%5D%5B1%5D=MOP-35&s-qc%5Blocality%5D%5B2%5D=MOP-27&s-qc%5Blocality%5D%5B3%5D=MOP-86'
-emails: ['jachymdv@gmail.com', 'xviktorie.havlickova@gmail.com']
+emails: ['jachymdv@gmail.com', 'viktorie.havlickova@gmail.com']
 database: 'links.txt'
 send_messages: 'telegram'
