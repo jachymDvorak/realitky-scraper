@@ -126,8 +126,8 @@ class RealityAggregator():
         with open(file) as f:
             auth = json.load(f)
 
-        url = f'https://api.telegram.org/{auth.bot_id}/sendMessage'
-        chat_id = auth.chat_id
+        url = f'https://api.telegram.org/{auth["bot_id"]}/sendMessage'
+        chat_id = auth["chat_id"]
 
         for link in self.reality_links:
 
