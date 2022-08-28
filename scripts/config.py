@@ -21,7 +21,7 @@ class Config():
 
         print(f'Reading config from: {filename}')
 
-        with open(filename, 'r') as file:
+        with open(filename, 'r', encoding='latin-2') as file:
             config = yaml.safe_load(file)
 
         return config

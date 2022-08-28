@@ -8,6 +8,7 @@ from scripts.config import Config
 import json
 import requests
 
+
 class RealityAggregator():
 
     def __init__(self,
@@ -36,12 +37,10 @@ class RealityAggregator():
 
         '''reads the file of existing links with apts and returns a list of existing apts'''
 
-
         with open(self.filename, 'r') as f:
             existing_links = [line.rstrip() for line in f.readlines()]
 
         print(f'Reading existing links from {self.filename}')
-        print(f'One of the existing links: {existing_links[1]}')
 
         return existing_links
 
@@ -130,7 +129,6 @@ class RealityAggregator():
         chat_id = auth["chat_id"]
 
         for link in self.reality_links:
-
             headers = {'Content-Type': 'application/json',
                        'Proxy-Authorization': 'Basic base64'}
             data_dict = {'chat_id': chat_id,
@@ -139,7 +137,6 @@ class RealityAggregator():
             data = json.dumps(data_dict)
 
             requests.post(url,
-                        data=data,
-                        headers=headers,
-                        verify=False)
-
+                          data=data,
+                          headers=headers,
+                          verify=False)

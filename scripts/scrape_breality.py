@@ -9,15 +9,15 @@ class BrealityScraper():
 
         self.url_base = 'https://www.bezrealitky.cz'
         self.reality_aggregator = reality_aggregator
-        self.main_url = self.reality_aggregator.config.breality
+        self.main_urls = self.reality_aggregator.config.breality
 
-    def scrape(self) -> None:
+    def scrape(self, main_url: str) -> None:
 
-        print(f'Scraping breality from url: {self.main_url}')
+        print(f'Scraping breality from url: {main_url}')
 
         try:
             # create soup object of html of main url
-            soup = BeautifulSoup(requests.get(self.main_url).content, 'lxml')
+            soup = BeautifulSoup(requests.get(main_url).content, 'lxml')
             # get all links of apts
             ap_list_elem = soup.find_all('a')
 
@@ -44,3 +44,13 @@ class BrealityScraper():
 
         except:
             print('URL not provided.')
+
+    def scrape_all_urls(self):
+
+        for url in self.main_urls:
+
+            try:
+                self.scrape(url)
+            except:
+
+                print('oops')

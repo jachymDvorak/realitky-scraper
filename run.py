@@ -19,15 +19,15 @@ if __name__ == "__main__":
     print(f'Config name: {config.config_name}')
 
     reality_aggregator = RealityAggregator(config)
-    ireality_scraper = IrealityScraper(reality_aggregator)
-    preality_scraper = PrealityScraper(reality_aggregator)
+    #ireality_scraper = IrealityScraper(reality_aggregator)
+    #preality_scraper = PrealityScraper(reality_aggregator)
     sreality_scraper = SrealityScraper(reality_aggregator)
     breality_scraper = BrealityScraper(reality_aggregator)
 
-    ireality_scraper.scrape()
-    preality_scraper.scrape()
-    sreality_scraper.scrape()
-    breality_scraper.scrape()
+    #ireality_scraper.scrape()
+    #preality_scraper.scrape()
+    sreality_scraper.scrape_all_urls()
+    breality_scraper.scrape_all_urls()
 
     if reality_aggregator.reality_links:
         print(f'Found {len(reality_aggregator.reality_links)} new apartments!')
