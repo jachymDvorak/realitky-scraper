@@ -32,11 +32,11 @@ if __name__ == "__main__":
     if reality_aggregator.reality_links:
         print(f'Found {len(reality_aggregator.reality_links)} new apartments!')
 
-        if reality_aggregator.config.send_messages == 'email':
+        if 'email' in reality_aggregator.config.send_messages:
             for email in reality_aggregator.config.emails:
                 print(f'Sending email to {email}...')
                 reality_aggregator.send_email(receiver_email=email)
-        if reality_aggregator.config.send_messages == 'telegram':
+        if 'telegram' in reality_aggregator.config.send_messages:
             print(f'Sending links to telegram group...')
             reality_aggregator.send_telegram_messages()
 
