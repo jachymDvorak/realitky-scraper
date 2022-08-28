@@ -6,7 +6,7 @@ import time
 from scripts.reality_aggregator import RealityAggregator
 
 
-class SrealityScraper():
+class SrealityScraper:
 
     def __init__(self,
                  reality_aggregator: RealityAggregator):
@@ -60,7 +60,8 @@ class SrealityScraper():
                     time.sleep(60)
                     soup = BeautifulSoup(driver.page_source, 'lxml')
                     driver.quit()
-                    if not 'Je mi líto, inzerát neexistuje.' in str(soup.body):
+
+                    if 'Je mi líto, inzerát neexistuje.' not in str(soup.body):
                         self.reality_aggregator.reality_links.append(link_url)
                         self.reality_aggregator.append_to_txt(link_url)
                         self.reality_aggregator.existing_links.append(link_url)
@@ -72,7 +73,9 @@ class SrealityScraper():
 
             # print number of new found apts
             print(f'Found {i} apartments')
+
         except:
+
             print('URL not provided.')
 
     def scrape_all_urls(self):
